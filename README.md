@@ -52,6 +52,3 @@ For questions or issues:
 - Open an issue on the [GitHub repository](https://github.com/Bioconductor/BiocHubsIngestR/issues)
 - Contact the Bioconductor team
 
-## License
-
-Artistic-2.0
