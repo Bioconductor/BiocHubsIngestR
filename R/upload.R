@@ -28,15 +28,13 @@ upload <- function(path, bucket = "userdata") {
     s3_client$create_bucket(Bucket = bucket)
   })
 
-  if (file.info(path)$isdir) {
-    files <- list.files(path, recursive = TRUE, full.names = TRUE)
-  } else {
-    files <- path
-  }
+  is_dir <- file.info(path)$isdir
+  base_dir <- if(is_dir) basename(path) else NULL
+  files <- if(is_dir) list.files(path, recursive = TRUE, full.names = TRUE) else path
 
   uploaded <- lapply(files, function(f) {
-    rel_path <- if(file.info(path)$isdir) {
-      sub(paste0("^", path, "/?"), "", f)
+    rel_path <- if(is_dir) {
+      file.path(base_dir, sub(paste0("^", path, "/?"), "", f))
     } else {
       basename(f)
     }
