@@ -17,7 +17,7 @@
 upload <- function(path, bucket = "userdata") {
   # Hardcoded part size: 1GB
   MULTIPART_THRESHOLD <- 1024 * 1024 * 1024  # 1GB
-  PART_SIZE <- 1024 * 1024 * 1024  # 1GB
+  PART_SIZE <- 1024 * 1024 * 128  # 100M
   
   if (!file.exists(path))
     stop("Path does not exist: ", path)
