@@ -1,6 +1,6 @@
 Package: BiocHubsIngestR
 Title: Upload Data to Bioconductor Hubs Ingest Endpoints
-Version: 0.99.0
+Version: 0.99.1
 Authors@R: 
     person("Alexandru", "Mahmoud", email = "almahmoud.research@gmail.com", role = c("aut", "cre"))
 Description: Facilitates uploading data to temporary S3 endpoints created by the Bioconductor Hubs Ingest stack.
